@@ -1,0 +1,2 @@
+#!/bin/sh
+/photo-stream/scripts/gsutil-rsync.sh > /var/log/gsutil-rsync-cron.log
