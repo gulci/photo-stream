@@ -21,6 +21,7 @@ WORKDIR /photo-stream
 
 RUN mkdir -p photos/original
 
+RUN mkdir -p /etc/periodic/1min/ && cp /photo-stream/crons/gsutil-rsync-cron /etc/periodic/1min/
 RUN touch /var/log/gsutil-rsync-cron.log
 RUN ./scripts/cron-setup.sh
 
@@ -30,4 +31,4 @@ RUN ruby -v && gem install bundler jekyll &&\
 
 EXPOSE 4000
 
-ENTRYPOINT /scripts/gsutil-rsync.sh & bundle exec jekyll serve --host 0.0.0.0
+ENTRYPOINT /scripts/gsutil-rsync.sh & crond & bundle exec jekyll serve --host 0.0.0.0

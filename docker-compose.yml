@@ -22,7 +22,6 @@ services:
       - PHOTO_STREAM_BUCKET=${PHOTO_STREAM_BUCKET}
     volumes:
       - ${GSA_JSON_PATH}:/photo-stream/gsa.json
-      - ./crons:/etc/periodic/1min/:ro
     env_file: .env
     ports:
       - "4000:4000"
