@@ -31,4 +31,4 @@ RUN ruby -v && gem install bundler jekyll &&\
 
 EXPOSE 4000
 
-ENTRYPOINT /scripts/gsutil-rsync.sh & crond & bundle exec jekyll serve --host 0.0.0.0
+ENTRYPOINT ["scripts/startup.sh"]
