@@ -20,6 +20,7 @@ services:
       - TWITTER_USERNAME=${TWITTER_USERNAME}
       - INSTAGRAM_USERNAME=${INSTAGRAM_USERNAME}
       - PHOTO_STREAM_BUCKET=${PHOTO_STREAM_BUCKET}
+      - ENABLE_TELEMETRY=${ENABLE_TELEMETRY}
     volumes:
       - ${GSA_JSON_PATH}:/photo-stream/gsa.json
     env_file: .env
