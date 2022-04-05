@@ -20,6 +20,7 @@ jobs:
           images: mariogulci/photo-stream
           tags: |
             type=sha
+            type=raw,value=latest
       -
         name: Login to DockerHub
         uses: docker/login-action@v1
